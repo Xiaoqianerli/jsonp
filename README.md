@@ -7,17 +7,17 @@ Inspired from https://github.com/webmodules/jsonp
 Install via NPM:
 
 ```bash
-npm i @seven_y_q_guo/jsonp
+npm i @amy/jsonp
 ```
 
 ## Usage
 
 ```javascript
-const jsonp = require("@seven_y_q_guo/jsonp"); // or import jsonp from '@seven_y_q_guo/jsonp';
-jsonp('http://jsfiddle.net/echo/jsonp?name=seven', {
+const jsonp = require("@amy/jsonp"); // or import jsonp from '@amy/jsonp';
+jsonp('http://jsfiddle.net/echo/jsonp?name=amy', {
   name: 'hello',
   success: (info) => {
-    console.log(info); // {name: 'seven'}
+    console.log(info); // {name: 'amy'}
   },
   error: (error) => {
     console.log(error); // handle kinds of errors like timeout, 404, etc.
@@ -59,7 +59,7 @@ function fetchJson(url, opts = {}) {
     });
   })
 }
-fetchJson('http://jsfiddle.net/echo/jsonp?name=seven').then(res => {
+fetchJson('http://jsfiddle.net/echo/jsonp?name=amy').then(res => {
   console.log(res);
 }).catch(err => {
   console.log(err);
