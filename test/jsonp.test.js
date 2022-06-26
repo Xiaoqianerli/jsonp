@@ -3,7 +3,7 @@ const jsonp = require('../jsonp');
 test('basic jsonp', () => {
     const obj = {
         name: 'amy',
-        gender: 'male'
+        gender: 'female'
     }
     const searchParams = new URLSearchParams(obj);
     const queryString = searchParams.toString();
@@ -17,12 +17,13 @@ test('basic jsonp', () => {
          },
         timeout: false
     })
+    expect(1).toBe(2);
 });
 
 test('404', () => {
     const obj = {
         name: 'amy',
-        gender: 'male'
+        gender: 'female'
     }
     const searchParams = new URLSearchParams(obj);
     const queryString = searchParams.toString();
@@ -42,7 +43,7 @@ test('404', () => {
 test('timeout', () => {
     const obj = {
         name: 'amy',
-        gender: 'male',
+        gender: 'female',
         delay: 7
     }
     const searchParams = new URLSearchParams(obj);
@@ -62,7 +63,7 @@ test('timeout', () => {
 test('named callback', () => {
     const obj = {
         name: 'amy',
-        gender: 'male'
+        gender: 'female'
     }
     const searchParams = new URLSearchParams(obj);
     const queryString = searchParams.toString();
@@ -81,7 +82,7 @@ test('named callback', () => {
 test('cancel jsonp', () => {
     const obj = {
         name: 'amy',
-        gender: 'male'
+        gender: 'female'
     }
     const searchParams = new URLSearchParams(obj);
     const queryString = searchParams.toString();
@@ -98,5 +99,3 @@ test('cancel jsonp', () => {
 
     cancel();
 }); 
-
-

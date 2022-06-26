@@ -7,11 +7,13 @@
   // jsonp.js
   var require_jsonp = __commonJS({
     "jsonp.js"(exports, module) {
-      function jsonp(url, { name, success, error, timeout = 3e3, parm = "callback" }) {
+      var count = 0;
+      function jsonp(url, { name, success, error, timeout = 3e3, param = "callback", prefix }) {
         const script = document.createElement("script");
         const u = new URL(url);
         const params = new URLSearchParams(u.search);
-        params.set(parm, name);
+        const id = name || (prefix || "__jp") + count++;
+        params.set(param, id);
         script.src = u.origin + u.pathname + "?" + params.toString();
         let timer;
         if (timeout) {
@@ -21,12 +23,12 @@
           }, timeout);
         }
         function clearup() {
-          window[name] = () => {
+          window[id] = () => {
           };
           script.remove();
           clearTimeout(timer);
         }
-        window[name] = (data) => {
+        window[id] = (data) => {
           clearup();
           success(data);
         };
