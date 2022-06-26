@@ -1,0 +1,21 @@
+{
+  "name": "amy-jsonp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "jsonp.js",
+  "scripts": {
+    "test": "jest",
+    "build": "esbuild jsonp.js --bundle --outfile=dist/out.js",
+    "build:example": "esbuild example/index.js --bundle --outfile=example/build.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "dependencies": {
+    "esbuild": "^0.14.47",
+    "jest": "^28.1.1",
+    "jest-environment-jsdom": "^28.1.1"
+  }
+}
