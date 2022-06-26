@@ -1,6 +1,6 @@
 {
-  "name": "@amy/jsonp",
-  "version": "1.0.0",
+  "name": "@amy1994/jsonp",
+  "version": "1.0.1",
   "description": "",
   "main": "jsonp.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "jsonp",
     "build your own"
   ],
-  "author": "",
+  "author": "amy",
   "license": "MIT",
   "jest": {
     "testEnvironment": "jsdom"
